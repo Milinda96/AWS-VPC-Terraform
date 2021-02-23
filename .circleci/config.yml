@@ -12,7 +12,7 @@ jobs:
           command: apk add --no-cache bash
       - run:
           name: chmod permissions
-          command: chmod 700 ./script/cibuild
+          command: chmod 700 script/cibuild
       - run:
           name: Execute cibuild
           command: ./scripts/cibuild
