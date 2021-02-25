@@ -146,19 +146,19 @@ resource "aws_security_group_rule" "all_outbound_access" {
   cidr_blocks       = ["0.0.0.0/0"]
 }
 
-resource "aws_eip" "my-test-eip" {
-  vpc = true
-}
+# resource "aws_eip" "my-test-eip" {
+#   vpc = true
+# }
 
-resource "aws_nat_gateway" "my-test-nat-gateway" {
-  allocation_id = aws_eip.my-test-eip.id
-  subnet_id     = aws_subnet.public_subnet.0.id
-}
+# resource "aws_nat_gateway" "my-test-nat-gateway" {
+#   allocation_id = aws_eip.my-test-eip.id
+#   subnet_id     = aws_subnet.public_subnet.0.id
+# }
 
 # Adding Route for Transit Gateway
 
-resource "aws_route" "my-tgw-route" {
-  route_table_id         = aws_route_table.public_route.id
-  destination_cidr_block = "0.0.0.0/0"
-  transit_gateway_id     = var.transit_gateway
-}
+# resource "aws_route" "my-tgw-route" {
+#   route_table_id         = aws_route_table.public_route.id
+#   destination_cidr_block = "0.0.0.0/0"
+#   transit_gateway_id     = var.transit_gateway
+# }
